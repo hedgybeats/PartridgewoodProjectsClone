@@ -1,0 +1,45 @@
+.c-item {
+  height: 480px;
+}
+
+.c-img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.header1 {
+  text-align: right;
+  font-style: italic;
+  font-family: Georgia, serif;
+  font-size: 3em;
+  padding-top: 1.5rem;
+}
+
+.header2 {
+  font-size: 0.7em;
+  display: inline; /* make this element inline so it can appear on the same line as the text */
+}
+
+
+.card {
+  width: 100%;
+  border: none;
+}
+
+.card-body.center-image {
+  display: flex;
+  justify-content: center; /* centers child elements horizontally */
+  align-items: center; /* centers child elements vertically */
+  height: 18rem; /* adjust this value to suit your design */
+}
+
+.beforeAndAfter {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 500px) {
+  .beforeAndAfter {
+    width: 100%;
+  }
+}

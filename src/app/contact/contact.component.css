@@ -1,0 +1,46 @@
+body {
+  font-size: large;
+}
+
+.h-300p {
+  height: 430px;
+}
+
+.test {
+  max-width: 1000px;
+}
+
+@media (max-width: 768px) {
+  .w-50 {
+    width: 100%!important;
+    margin-bottom: 20px;
+  }
+
+  .test {
+    max-width: none !important;
+  }
+
+  #locationMap {
+    margin: 0px !important;
+    margin-left: 16px !important;
+    margin-top: 8px !important;
+  }
+}
+
+#locationMap {
+  margin: 0px !important;
+  margin-left: 16px !important;
+  margin-top: 8px !important;
+}
+
+.highlight {
+  background-color: lightgreen;
+}
+
+.dropdown-item {
+  cursor: default;
+}
+
+#services-input {
+  background-color: white;
+}
