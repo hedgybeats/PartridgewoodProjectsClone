@@ -1,19 +1,35 @@
 .service-wrap {
-    border: 1px solid #ddd; /* adjust as needed */
-    border-radius: 15px; /* adjust as needed for rounded corners */
-    transition: all 0.3s ease-in-out; /* this will animate any changes we make */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* initial box shadow */
-    margin: 10px; /* adjust as needed for spacing */
-    padding: 10px; /* adjust as needed for inner spacing */
-    cursor: default;
+  border: 1px solid #ddd; /* adjust as needed */
+  border-radius: 15px; /* adjust as needed for rounded corners */
+  transition: all 0.3s ease-in-out; /* this will animate any changes we make */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* initial box shadow */
+  margin: 10px; /* adjust as needed for spacing */
+  padding: 10px; /* adjust as needed for inner spacing */
+  cursor: default;
 }
 
 .service-wrap:hover {
-    transform: scale(1.05); /* makes it pop out a bit */
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* makes the shadow more pronounced */
+  transform: scale(1.05); /* makes it pop out a bit */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* makes the shadow more pronounced */
 }
 
-h2 {
-    font-family: 'Tw Cen MT Condensed Extra Bold', sans-serif;
-    color: #77212E;
+.service-title {
+  font-family: "Tw Cen MT Condensed Extra Bold", sans-serif;
+  color: #77212e;
+  font-size: 2em;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #222;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .service-title {
+    width: 50%;
+  }
+}
+
+section {
+  background-color: #e6e6e6;
 }

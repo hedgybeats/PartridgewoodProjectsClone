@@ -1,4 +1,35 @@
-h4 {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #e6e6e6;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 2rem;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-title {
+  font-family: "Tw Cen MT Condensed Extra Bold", sans-serif;
+  color: #77212e;
+  font-size: 2em;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #222;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .about-title {
+    width: 50%;
+  }
 }

@@ -17,6 +17,7 @@ export class ContactComponent implements OnInit {
 
   selectedServicesArray: string[] = [];
   selectedServices: string = '';
+  contactForm!: FormGroup;
 
   constructor(private fb: FormBuilder, private emailService: EmailService) {}
 
@@ -30,6 +31,12 @@ export class ContactComponent implements OnInit {
     // this.emailForm = this.fb.group({
     //   Message: ['', Validators.required],
     // }); 
+
+    this.contactForm = this.fb.group({
+      name: ['', Validators.required],
+      contactNumber: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]]
+    });
   }
 
   toggleSelection(service: string): void {
@@ -76,4 +83,18 @@ export class ContactComponent implements OnInit {
   // public ClearInput(): void {
   //   this.Message.patchValue('');
   // }
+
+  onSubmit(): void {
+    if (this.contactForm.valid) {
+      // Put here your email sending logic
+      console.log(this.contactForm.value);
+    } else {
+      Object.keys(this.contactForm.controls).forEach(field => {
+        const control = this.contactForm.get(field);
+        if (control) {
+          control.markAsTouched({ onlySelf: true });
+        }
+      });
+    }
+  }
 }

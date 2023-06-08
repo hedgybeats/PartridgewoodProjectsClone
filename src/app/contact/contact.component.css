@@ -2,10 +2,6 @@ body {
   font-size: large;
 }
 
-.h-300p {
-  height: 430px;
-}
-
 .test {
   max-width: 1000px;
 }
@@ -43,4 +39,9 @@ body {
 
 #services-input {
   background-color: white;
+}
+
+.small-text {
+  font-size: 0.75rem;  /* adjust size as needed */
+  padding:0.5%
 }

@@ -81,9 +81,12 @@
   #footer {
     width: 100%;
     padding: 1.5rem;
-    background-color: #727365;
     text-align: center;
     font-family: "Roboto Slab", serif;
+    background-image: url('assets/pictures/footerbackground.png');
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
   }
 
   .logo-image {
