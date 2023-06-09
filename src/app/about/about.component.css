@@ -13,8 +13,6 @@
   text-align: center;
   width: 100%;
   max-width: 100%;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 
 .about-title {
@@ -26,6 +24,7 @@
   width: 25%;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 2rem;
 }
 
 @media screen and (max-width: 768px) {

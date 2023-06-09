@@ -83,11 +83,11 @@
     padding: 1.5rem;
     text-align: center;
     font-family: "Roboto Slab", serif;
-    background-image: url('assets/pictures/footerbackground.png');
     background-repeat: no-repeat;
     background-position: center; 
     background-size: cover;
   }
+
 
   .logo-image {
     width: 250px;

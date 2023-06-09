@@ -2,8 +2,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="d-flex justify-content-between flex-wrap">
-  <div class="col-lg-4">
-    <div class="card shadow test m-2 ms-3 me-3 p-3">
+  <div class="col-lg-6 d-flex flex-column">
+    <div class="card shadow test m-2 ms-3 me-3 p-3 flex-grow-1 custom-card">
       <div class="card-header fs-4 p-3">Contact Details</div>
       <div class="card-body">
         <div>
@@ -23,8 +23,8 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-8">
-    <div class="card shadow test m-2 ms-3 me-3 p-3">
+  <div class="col-lg-6 d-flex flex-column">
+    <div class="card shadow test m-2 ms-3 me-3 p-3 flex-grow-1 custom-card">
       
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
