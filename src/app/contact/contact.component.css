@@ -29,6 +29,12 @@
   margin-top: 8px !important;
 }
 
+@media (min-width: 992px) {
+  .custom-card {
+    min-height: 510px;  /* adjust this value as needed */
+  }
+}
+
 .highlight {
   background-color: lightgreen;
 }

@@ -51,6 +51,41 @@
             >
               Name is required
             </div>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="d-flex justify-content-between flex-wrap">
+  <div class="col-lg-6 d-flex flex-column">
+    <div class="card shadow test m-2 ms-3 me-3 p-3 flex-grow-1 custom-card">
+      <div class="card-header fs-4 p-3">Contact Details</div>
+      <div class="card-body">
+        <div>
+          Please feel free to contact us directly if you have any questions, or fill in our form to get a response that is more specific.
+        </div>
+        <br>
+        <div><b><u>Contact Trevor:</u></b></div>
+        <br>
+        <div>Cell Number: 061 428 4712</div>
+        <br>
+        <div>
+          Email Address:
+          <a href="mailto:partridgewoodprojects@gmail.com"
+            >partridgewoodprojects@gmail.com</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 d-flex flex-column">
+    <div class="card shadow test m-2 ms-3 me-3 p-3 flex-grow-1 custom-card">
+      
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Your Name</span>
+          <input type="text" class="form-control" placeholder="John" formControlName="name" aria-describedby="basic-addon1">
+          <div *ngIf="contactForm.controls['name'].touched && contactForm.controls['name'].invalid" class="text-danger small-text">
+            Name is required
           </div>
 
           <div class="input-group mb-3">
