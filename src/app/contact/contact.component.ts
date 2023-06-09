@@ -14,7 +14,6 @@ declare let Email: any;
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
-
   selectedServicesArray: string[] = [];
   selectedServices: string = '';
   contactForm!: FormGroup;
@@ -24,19 +23,27 @@ export class ContactComponent implements OnInit {
   emailSending = false;
   emailSuccesful = false;
   error: any;
-  // successMsg: string;
-  // emailForm: FormGroup;
 
   ngOnInit(): void {
-    // this.emailForm = this.fb.group({
-    //   Message: ['', Validators.required],
-    // }); 
-
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       contactNumber: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]]
+      email: ['', [Validators.required, Validators.email]],
     });
+  }
+
+  public sendEmail() {
+    Email.send({
+      Host: 'smtp.gmail.com',
+      Username: 'marcodumbleton1@gmail.com',
+      Password: 'Ocrampolo12!',
+      To: 'marco.dumbleton@fostermelliar.co.za',
+      From: 'From Field',
+      Subject: 'New Website Contact Form Enquiry',
+      Body: 'And this is the body',
+    }).then((message: any) => window.alert(message));
+
+    //reset
   }
 
   toggleSelection(service: string): void {
@@ -54,42 +61,12 @@ export class ContactComponent implements OnInit {
     return this.selectedServicesArray.includes(service);
   }
 
-  // get Message(): AbstractControl {
-  //   return this.emailForm.get('Message');
-  // }
-
-  // public async SendEmail(): Promise<void> {
-  //   if (this.emailForm.valid) {
-  //     this.emailSending = true;
-  //     const success = await this.emailService.SendEmail(
-  //       'subject',
-  //       this.Message.value
-  //     );
-  //     this.emailSending = false;
-  //     if (success) {
-  //       this.emailSuccesful = true;
-  //       this.error = undefined;
-  //       this.ClearInput();
-  //     } else {
-  //       this.emailSuccesful = false;
-  //       this.error = 'Something went wrong';
-  //     }
-  //   } else {
-  //     this.emailSuccesful = false;
-  //     this.error = 'Message is required';
-  //   }
-  // }
-
-  // public ClearInput(): void {
-  //   this.Message.patchValue('');
-  // }
-
   onSubmit(): void {
     if (this.contactForm.valid) {
       // Put here your email sending logic
       console.log(this.contactForm.value);
     } else {
-      Object.keys(this.contactForm.controls).forEach(field => {
+      Object.keys(this.contactForm.controls).forEach((field) => {
         const control = this.contactForm.get(field);
         if (control) {
           control.markAsTouched({ onlySelf: true });
