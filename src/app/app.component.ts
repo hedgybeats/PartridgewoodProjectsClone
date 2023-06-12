@@ -1,5 +1,6 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,17 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   showFooter: boolean = false;
+  showFloatingImage: boolean = true;
 
   constructor(private router: Router) {}
 
   ngOnInit() {
-
+    this.router.events.pipe(
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      // replace 'page' with the route where you don't want to show the image
+      this.showFloatingImage = !event.url.includes('/contact');
+    });
   }
 
   public HomeReload(): void {

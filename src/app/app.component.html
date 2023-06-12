@@ -145,9 +145,13 @@
   <div class="">
     <router-outlet></router-outlet>
   </div>
+  
+  <a href="https://api.whatsapp.com/send?phone=27796340955">
+  <img *ngIf="showFloatingImage" id="floating-image" title="Message us on Whatsapp" src="assets/pictures/WhatsApp.svg.png" alt="Your Alt Text">
+  </a>
 </div>
 
-<footer class="bg-white text-center" id="footer" style="background-image: url('assets/pictures/footerbackground.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+<footer class="text-center" id="footer" style="background-image: url('assets/pictures/footerbackground.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
   <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8 pt-3">
     <nav class="flex justify-center sm:justify-center" aria-label="Footer">
       <a routerLink="home" href="#" style="color: black; text-decoration: none; font-family: 'Helvetica Neue', Arial, sans-serif;" class="text-sm leading-5 mx-4">Home</a>

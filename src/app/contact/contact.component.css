@@ -30,7 +30,7 @@
 
 
 form {
-  background-color: white;
+  /* background-color: white; */
   display: flex;
   flex-direction: column;
   padding: 2vw 4vw;
@@ -45,6 +45,7 @@ form h3 {
   color: #555;
   font-weight: 800;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 form input, form textarea {
@@ -67,4 +68,16 @@ form button {
   width: 150px;
   margin: 20px auto 0;
   border-radius: 30px;
+}
+
+.whatsapplink {
+  padding: 2rem;
+}
+
+.icon {
+  padding: 1.5rem;
+}
+
+.icondescription {
+  font-size: small;
 }
