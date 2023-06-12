@@ -14,8 +14,6 @@ declare let Email: any;
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
-  selectedServicesArray: string[] = [];
-  selectedServices: string = '';
   contactForm!: FormGroup;
 
   constructor(private fb: FormBuilder, private emailService: EmailService) {}
@@ -29,49 +27,18 @@ export class ContactComponent implements OnInit {
       name: ['', Validators.required],
       contactNumber: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
+      message: [''],
     });
   }
-
+  
   public sendEmail() {
+    const formValue = this.contactForm.value;
     Email.send({
-      Host: 'smtp.gmail.com',
-      Username: 'marcodumbleton1@gmail.com',
-      Password: 'Ocrampolo12!',
-      To: 'marco.dumbleton@fostermelliar.co.za',
-      From: 'From Field',
+      SecureToken : "12cd6490-ad1c-4d6e-bd46-ae2af55a94f0",
+      To: 'marcodumbleton1@gmail.com',
+      From: 'marcodumbleton1@gmail.com',
       Subject: 'New Website Contact Form Enquiry',
-      Body: 'And this is the body',
+      Body: `Name: ${formValue.name}<br>Email: ${formValue.email}<br>Phone: ${formValue.contactNumber}<br>Message: ${formValue.message}`,
     }).then((message: any) => window.alert(message));
-
-    //reset
-  }
-
-  toggleSelection(service: string): void {
-    const index = this.selectedServicesArray.indexOf(service);
-    if (index === -1) {
-      this.selectedServicesArray.push(service);
-    } else {
-      this.selectedServicesArray.splice(index, 1);
-    }
-
-    this.selectedServices = this.selectedServicesArray.join(', ');
-  }
-
-  isSelected(service: string): boolean {
-    return this.selectedServicesArray.includes(service);
-  }
-
-  onSubmit(): void {
-    if (this.contactForm.valid) {
-      // Put here your email sending logic
-      console.log(this.contactForm.value);
-    } else {
-      Object.keys(this.contactForm.controls).forEach((field) => {
-        const control = this.contactForm.get(field);
-        if (control) {
-          control.markAsTouched({ onlySelf: true });
-        }
-      });
-    }
   }
 }
