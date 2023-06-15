@@ -1,13 +1,13 @@
 .small-text {
   font-size: 0.75rem;
-  padding:0.5%
-} */
+  padding: 0.5%;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'poppins', sans-serif;
+  font-family: "poppins", sans-serif;
 }
 
 .card1 {
@@ -28,7 +28,6 @@
   width: 100%;
 }
 
-
 form {
   /* background-color: white; */
   display: flex;
@@ -48,7 +47,8 @@ form h3 {
   text-align: center;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   border: 0;
   margin: 10px 0;
   padding: 20px;
