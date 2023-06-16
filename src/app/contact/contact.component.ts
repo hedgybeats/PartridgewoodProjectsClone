@@ -1,12 +1,10 @@
 import { EmailService } from './../_services/email.service';
 import { Component, OnInit } from '@angular/core';
 import {
-  AbstractControl,
   FormBuilder,
   FormGroup,
   Validators,
 } from '@angular/forms';
-declare let Email: any;
 
 @Component({
   selector: 'app-contact',
@@ -22,23 +20,37 @@ export class ContactComponent implements OnInit {
   emailSuccesful = false;
   error: any;
 
+  // Added these so you can get the individual form controls and check their values and if they are valid
+  get nameFc() {
+    return this.contactForm.get('name');
+  }
+
+  get contactNumberFc() {
+    return this.contactForm.get('contactNumber');
+  }
+
+  get emailFc() {
+    return this.contactForm.get('email');
+  }
+
+  get messageFc() {
+    return this.contactForm.get('message');
+  }
+
   ngOnInit(): void {
     this.contactForm = this.fb.group({
-      name: ['', Validators.required],
-      contactNumber: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      message: [''],
+      name: [null, Validators.required],
+      contactNumber: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+      message: [null],
     });
   }
-  
+
+  // Calling email service
   public sendEmail() {
-    const formValue = this.contactForm.value;
-    Email.send({
-      SecureToken : "12cd6490-ad1c-4d6e-bd46-ae2af55a94f0",
-      To: 'marcodumbleton1@gmail.com',
-      From: 'marcodumbleton1@gmail.com',
-      Subject: 'New Website Contact Form Enquiry',
-      Body: `Name: ${formValue.name}<br>Email: ${formValue.email}<br>Phone: ${formValue.contactNumber}<br>Message: ${formValue.message}`,
-    }).then((message: any) => window.alert(message));
+    this.emailService.sendEmail(
+      'New Website Contact Form Enquiry',
+      `Name: ${this.nameFc?.value}<br>Email: ${this.emailFc?.value}<br>Phone: ${this.contactNumberFc?.value}<br>Message: ${this.messageFc?.value}`
+    );
   }
 }

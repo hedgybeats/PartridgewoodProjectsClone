@@ -1,114 +1,161 @@
 .light-text {
-    color: #ffffff;
-  }
-  
-  .navbar {
-    height: 80px;
-    background-color: #959ead;
-  }
-  
-  a {
-    cursor: pointer;
-  }
-  
-  a.unstyle-link:link {
-    color: none;
-    cursor: pointer;
-  }
-  
-  a.unstyle-link:visited {
-    color: none;
-    cursor: pointer;
-  }
-  
-  a.unstyle-link:hover {
-    color: none;
-    cursor: pointer;
-  }
-  
-  a.unstyle-link:active {
-    color: none;
-    cursor: pointer;
-  }
-  
-  a.unstyle-link {
-    text-decoration: none;
-    color: none;
-  }
-  
-  @media (max-width: 768px) {
-    #nav-items-lg {
-      display: none !important;
-    }
-    #contact-button {
-      display: none !important;
-    }
-    #nav-items-sm {
-      display: flex !important;
-    }
-  }
-  
-  .active-route{
-    font-weight: 600 !important;
-    text-shadow: 1px 1px 1px #000000 !important;
-  }
-  
-  .active-route-contact{
-    color: #351254 !important;
-    font-weight: 500 !important;
-    text-decoration: underline !important;
-  }
-  
-  .nav-menu-active{
-    background-color: #dadada;
-  }
-  
-  .dropdown-item:active{
-    background-color: #9987a9;
-  }
+  color: #ffffff;
+}
 
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .content {
-    flex-grow: 1;
-  }
-  
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  #footer a {
-    padding: 0 1rem;
-  }
-  
-  #footer {
-    width: 100%;
-    padding: 1.5rem;
-    text-align: center;
-    font-family: "Roboto Slab", serif;
-    background-color: white !important;
-  }
+/* .navbar {
+  height: 80px;
+  background-color: #959ead;
+} */
 
-  .logo-image {
-    width: 250px;
-    height: auto;
-  }
+a {
+  cursor: pointer;
+}
 
-  #floating-image {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    z-index: 9999;
-    cursor: pointer;
+a.unstyle-link:link {
+  color: none;
+  cursor: pointer;
+}
+
+a.unstyle-link:visited {
+  color: none;
+  cursor: pointer;
+}
+
+a.unstyle-link:hover {
+  color: none;
+  cursor: pointer;
+}
+
+a.unstyle-link:active {
+  color: none;
+  cursor: pointer;
+}
+
+a.unstyle-link {
+  text-decoration: none;
+  color: none;
+}
+
+@media (max-width: 768px) {
+  #nav-items-lg {
+    display: none !important;
   }
-  
+  #contact-button {
+    display: none !important;
+  }
+  #nav-items-sm {
+    display: flex !important;
+  }
+}
+
+.active-route {
+  font-weight: 600 !important;
+  text-shadow: 1px 1px 1px #000000 !important;
+}
+
+.active-route-contact {
+  color: #351254 !important;
+  font-weight: 500 !important;
+  text-decoration: underline !important;
+}
+
+.nav-menu-active {
+  background-color: #dadada;
+}
+
+.dropdown-item:active {
+  background-color: #9987a9;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* .content {
+  flex-grow: 1;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+#footer a {
+  padding: 0 1rem;
+}
+
+#footer {
+  width: 100%;
+  padding: 1.5rem;
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  background-color: white !important;
+} */
+
+.logo-image {
+  width: 250px;
+  height: auto;
+}
+
+#floating-image {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+#navbar {
+  height: var(--nav-height);
+  position: fixed;
+  right: 0;
+  width: 100%;
+  background-color: #959ead;
+  z-index: 5;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: var(--footer-height);
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: var(--fonts);
+  background-color: #ffffff;
+}
+
+#content {
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #e6e6e6;
+}
+
+#outlet {
+  z-index: -1;
+  margin-top: var(--nav-height);
+  margin-bottom: var(--footer-height);
+}
+
+/* shift the whatsapp icon by the height of the footer */
+#whatsappIcon > img{
+  margin-bottom: var(--footer-height) !important;
+}
