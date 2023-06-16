@@ -19,6 +19,8 @@ body {
   /* MSIE */
 }
 
-.v-100-excl-header-and-footer{
-  height: 100vh !important;
+:root {
+  --nav-height: 5rem;
+  --footer-height: 4.5rem;
+  --fonts: "Roboto Slab", serif;
 }

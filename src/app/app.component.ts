@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  public HomeReload(): void {
+  public homeReload(): void {
     const currentUrl = this.router.url.substring(1).split('/');
     if (currentUrl[0].toLowerCase() === 'home') {
       window.location.reload();

@@ -7,15 +7,16 @@ declare let Email: any;
 export class EmailService {
   constructor() {}
 
-  public async SendEmail(subject: string, body: string): Promise<boolean> {
-    const message = await Email.send({
-      SecureToken : '2b9627cb-daae-467d-b164-cd5caa4649c6',
-      To: 'marco.dumbleton@fostermelliar.co.za',
+  public async sendEmail(subject: string, body: string): Promise<boolean> {
+    const response = Email.send({
+      SecureToken: '12cd6490-ad1c-4d6e-bd46-ae2af55a94f0',
+      To: 'marcodumbleton1@gmail.com',
       From: 'marcodumbleton1@gmail.com',
       Subject: subject,
       Body: body,
-    });
-    if (message === 'OK') {
+    }).then((message: any) => window.alert(message));
+
+    if (response === 'OK') {
       return true;
     } else {
       return false;
